@@ -9,4 +9,4 @@ arrays, push, pop
 compile vs interpreted
 functional programming
 function is a first class citizen in javascript
-
+install nodejs
