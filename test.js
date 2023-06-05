@@ -9,6 +9,7 @@ clothing.pop()
 console.log(clothing);
 clothing.push("Shoes");
 console.log(clothing);
+console.log(clothing[2]);
 let favCar = {};
 favCar.color = "Black";
 favCar.convertible = true;
