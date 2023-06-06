@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Html Title
+        </title>
+        <script type="text/javascript">
+            var btn = () => {
+                document.getElementsByTagName("p")[0].innerText = "You clicked the button";
+            }
+            var clickableElement = document.getElementsByTagName("p")[0];
+            var message = "You clicked the element";
+            clickableElement.addEventListener("click", function(){
+                clickableElement.innerHTML = message;
+            });
+
+        </script>
+    </head>
+    <body>
+        <P>Hello World!</P>
+        <button onclick="btn()">hehe</button>
+    </body>
+</html>
