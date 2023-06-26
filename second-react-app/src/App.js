@@ -4,6 +4,9 @@ import ContactList from './ContactList';
 import { useState } from 'react';
 import MovieDetail from './MovieName';
 
+import { Link, Route, Routes } from 'react-router-dom';
+import AddContact from './CreateContact';
+
 
 const profiles = [
   {
@@ -118,28 +121,29 @@ const contacts = [
 
 
 function App() {
-  const dataObj =  {contacts : [
-    {
-      "id": "karen",
-      "name": "Karen Isgrigg",
-      "handle": "karen_isgrigg",
-      "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+  const dataObj = {
+    contacts: [
+      {
+        "id": "karen",
+        "name": "Karen Isgrigg",
+        "handle": "karen_isgrigg",
+        "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
 
-    },
-    {
-      "id": "richard",
-      "name": "Richard Kalehoff",
-      "handle": "richardkalehoff",
-      "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-    },
-    {
-      "id": "tyler",
-      "name": "Tyler McGinnis",
-      "handle": "tylermcginnis",
-      "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-    }
-  ]
-};
+      },
+      {
+        "id": "richard",
+        "name": "Richard Kalehoff",
+        "handle": "richardkalehoff",
+        "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+      },
+      {
+        "id": "tyler",
+        "name": "Tyler McGinnis",
+        "handle": "tylermcginnis",
+        "avatarURL": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+      }
+    ]
+  };
 
 const [state, setState] = useState(dataObj);
 
@@ -156,7 +160,11 @@ const removeContact = (contact) => {
 
   return (
     <div>
-      <ContactList contacts = {state.contacts} onDeleteContacts = {removeContact} />
+      <Routes>
+        <Route path='/' element={<ContactList contacts={state.contacts} onDeleteContacts={removeContact} />} />
+        <Route path='/AddContact' element = {<AddContact/>}/>
+      </Routes>
+
 
     </div>
   );
